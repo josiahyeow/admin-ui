@@ -13,12 +13,10 @@ export function Table() {
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
               <th key={header.id} css={[styles.cell, styles.headerRow]}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
               </th>
             ))}
           </tr>
@@ -40,12 +38,10 @@ export function Table() {
           <tr key={footerGroup.id}>
             {footerGroup.headers.map((header) => (
               <th key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.footer,
-                      header.getContext()
-                    )}
+                {flexRender(
+                  header.column.columnDef.footer,
+                  header.getContext()
+                )}
               </th>
             ))}
           </tr>

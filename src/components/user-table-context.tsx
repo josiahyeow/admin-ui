@@ -16,8 +16,6 @@ export function UserTableProvider({
   value: UserTableContextValue
   children: React.ReactNode
 }) {
-  if (!value) throw new Error('Must be used in a TableProvider')
-
   return (
     <UserTableContext.Provider value={value}>
       {children}

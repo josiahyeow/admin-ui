@@ -25,7 +25,12 @@ export function TableSearchBar() {
           placeholder="Search by name, email or role"
           css={styles.searchbar}
         />
-        <button className="search-icon" type="submit" css={styles.searchButton}>
+        <button
+          className="search-icon"
+          type="submit"
+          css={styles.searchButton}
+          aria-label="search"
+        >
           <Icon icon="search" size={16} css={{ color: color.grey05 }} />
         </button>
       </div>

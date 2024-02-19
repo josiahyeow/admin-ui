@@ -10,12 +10,12 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { useMemo, useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+
 import { DeleteSelectedButton } from './delete-selected-button'
 import { Table } from './table'
 import { TableCheckbox } from './table-checkbox'
 import { TableEditableColumn } from './table-editable-column'
+import { TableLoading } from './table-loading'
 import { TablePageControls } from './table-page-controls'
 import { TableRowActions } from './table-row-actions'
 import { TableSearchBar } from './table-searchbar'
@@ -52,6 +52,7 @@ export function UserTable() {
             checked={table.getIsAllPageRowsSelected()}
             indeterminate={table.getIsSomeRowsSelected()}
             onChange={table.getToggleAllPageRowsSelectedHandler()}
+            aria-label="select all rows checkbox"
           />
         ),
         cell: ({ row }) => (
@@ -59,6 +60,7 @@ export function UserTable() {
             checked={row.getIsSelected()}
             disabled={!row.getCanSelect()}
             onChange={row.getToggleSelectedHandler()}
+            aria-label={`select row ${row.index + 1} checkbox`}
           />
         ),
       }),
@@ -156,16 +158,6 @@ export function UserTable() {
         </div>
       </div>
     </UserTableProvider>
-  )
-}
-
-export function TableLoading() {
-  return (
-    <div css={styles.layout}>
-      <Skeleton height="52px" width="100%" />
-      <Skeleton height="565px" width="100%" />
-      <Skeleton height="33px" width="100%" />
-    </div>
   )
 }
 

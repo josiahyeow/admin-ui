@@ -15,6 +15,7 @@ export function TablePageControls() {
         css={[styles.pageButton, styles.firstItem]}
         onClick={() => table.setPageIndex(0)}
         disabled={!table.getCanPreviousPage()}
+        aria-label="first page"
       >
         <Icon icon="chevrons-left" size={16} />
       </button>
@@ -23,6 +24,7 @@ export function TablePageControls() {
         css={[styles.pageButton]}
         onClick={() => table.previousPage()}
         disabled={!table.getCanPreviousPage()}
+        aria-label="previous page"
       >
         <Icon icon="chevron-left" size={16} />
       </button>
@@ -44,6 +46,7 @@ export function TablePageControls() {
         css={[styles.pageButton]}
         onClick={() => table.nextPage()}
         disabled={!table.getCanNextPage()}
+        aria-label="next page"
       >
         <Icon icon="chevron-right" size={16} />
       </button>
@@ -52,6 +55,7 @@ export function TablePageControls() {
         css={[styles.pageButton, styles.lastItem]}
         onClick={() => table.setPageIndex(pageCount - 1)}
         disabled={!table.getCanNextPage()}
+        aria-label="last page"
       >
         <Icon icon="chevrons-right" size={16} />
       </button>

@@ -20,7 +20,7 @@ export function TableEditableColumn({
       [props.column.id]: value,
     })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ;(e.relatedTarget as any)?.click()
+    ;(e.relatedTarget as any)?.click?.()
   }
 
   if (isEditing) {
@@ -30,6 +30,7 @@ export function TableEditableColumn({
         value={value as string}
         onChange={(e) => setValue(e.target.value)}
         onBlur={onBlur}
+        aria-label="field-input"
       />
     )
   }

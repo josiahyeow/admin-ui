@@ -16,15 +16,30 @@ export function TableRowActions({
 }) {
   return (
     <div css={styles.layout}>
-      <button className="delete" css={styles.button} onClick={onDelete}>
+      <button
+        className="delete"
+        css={styles.button}
+        onClick={onDelete}
+        aria-label="delete"
+      >
         <Icon icon="trash" size={16} css={styles.icon} />
       </button>
       {isEditing ? (
-        <button className="save" css={styles.button} onClick={onSave}>
+        <button
+          className="save"
+          css={styles.button}
+          onClick={onSave}
+          aria-label="save"
+        >
           <Icon icon="check" size={16} css={styles.icon} />
         </button>
       ) : (
-        <button className="edit" css={styles.button} onClick={onEdit}>
+        <button
+          className="edit"
+          css={styles.button}
+          onClick={onEdit}
+          aria-label="edit"
+        >
           <Icon icon="edit" size={16} css={styles.icon} />
         </button>
       )}
